@@ -1,9 +1,7 @@
 const form = document.querySelector("#form");
 const errorList = document.querySelector("#error-list");
 const tableBody = document.querySelector("#table-body");
-//from wd
 
-function displayTable();
 // Event listener for form submission
 form.addEventListener("submit", (event) => {
   // Prevent the form from submitting
@@ -77,29 +75,6 @@ form.addEventListener("submit", (event) => {
   // Clear the form
   form.reset();
 });
-//display table
-function displayTable(){
-  let table = element("table-body");
-  let entries = userDataString;
-  let str = `<tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Password</th>
-                  <th>Dob</th>
-                  <th>Accepted terms?</th>
-              </tr>\n`;
-  for(let i=0;i<entries.length;i++){
-      str += `<tr>
-                  <td>${entries[i].name}</td>
-                  <td>${entries[i].email}</td>
-                  <td>${entries[i].password}</td>
-                  <td>${entries[i].dob}</td>
-                  <td>${entries[i].checked}</td>
-              </tr>\n`;
-  }
-  table.innerHTML = str;
-}
-
 
 // Get the age of a person based on their date of birth
 function getAge(dateString) {
@@ -115,23 +90,15 @@ function getAge(dateString) {
 
 // Save user data to local storage
 function saveUserData(userData) {
-  let userDataString = localStorage.getItem("userDataString");
-  let user_DataString = [];
-
-  if (userDataString) {
-    user_DataString = JSON.parse(userDataString);
-  }
-
-  user_DataString.push(userData);
-  localStorage.setItem("userDataString", JSON.stringify(user_DataString));
+  const userDataString = JSON.stringify(userData);
+  localStorage.setItem("userData", userDataString);
 }
 
 // Load user data from local storage and display it in the table
 function loadUserData() {
-  const user_DataString = localStorage.getItem("userData");
-  
-  if (user_DataString) {
-    const userData = JSON.parse(user_DataString);
+  const userDataString = localStorage.getItem("userData");
+  if (userDataString) {
+    const userData = JSON.parse(userDataString);
     const row = tableBody.insertRow();
 
     const nameCell = row.insertCell();
@@ -149,12 +116,8 @@ function loadUserData() {
     const tncCell = row.insertCell();
     tncCell.classList.add("true-false");
     tncCell.innerHTML = userData.tnc ? "True" : "False";
-    loadUserData();
     }
     }
     
     // Load the user data when the page loads
     loadUserData();
-    // Retrieve the string from localStorage.
-// Retrieve the string from localStorage.
-
