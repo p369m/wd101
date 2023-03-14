@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .form-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-bottom: 2px solid gray;
+  }
+  
+  input[type="checkbox"] {
+    margin-top: 1rem;
+  }
+  
+  button[type="submit"] {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #error-list {
+    color: red;
+    margin-top: 1rem;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin-top: 2rem;
+    width: 100%;
+  }
+  
+  thead {
+    background-color: dodgerblue;
+    color: white;
+  }
+  
+  th,
+  td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid gray;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .true-false {
+    text-align: center;
+  }
+  
