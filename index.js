@@ -126,6 +126,7 @@ function verifier(elem,message,cnd){
 
   }
 }
+console.log("Hello GitHub!");
 
 
 
